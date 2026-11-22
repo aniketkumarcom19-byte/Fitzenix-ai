@@ -1,0 +1,193 @@
+{
+  "entities": {
+    "UserAccountData": {
+      "title": "UserAccountData",
+      "description": "Root per-user fitness profile, weekly workout schedule, diet plan, badges, challenges, and preferences.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "profileJson": { "type": "string" },
+        "weeklyScheduleJson": { "type": "string" },
+        "dietPreferencesJson": { "type": "string" },
+        "dietPlanJson": { "type": "string" },
+        "settingsJson": { "type": "string" },
+        "unlockedBadgesJson": { "type": "string" },
+        "challengesJson": { "type": "string" },
+        "favoriteFoodIds": { "type": "array", "items": { "type": "string" } },
+        "favoriteTrackIds": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "createdAt", "updatedAt"]
+    },
+    "CloudWorkoutLog": {
+      "title": "CloudWorkoutLog",
+      "description": "Completed workout log record owned by a user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "dateKey": { "type": "string" },
+        "dayOfWeekIndex": { "type": "integer" },
+        "workoutTitle": { "type": "string" },
+        "durationSeconds": { "type": "integer" },
+        "completedExercisesCount": { "type": "integer" },
+        "completedSetsCount": { "type": "integer" },
+        "estimatedCalories": { "type": "integer" },
+        "notes": { "type": "string" },
+        "timestampMs": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "dateKey", "workoutTitle", "durationSeconds", "createdAt", "updatedAt"]
+    },
+    "CloudMealLog": {
+      "title": "CloudMealLog",
+      "description": "Logged nutrition meal entry owned by a user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "dateKey": { "type": "string" },
+        "mealTypeId": { "type": "string" },
+        "foodId": { "type": "string" },
+        "foodName": { "type": "string" },
+        "servings": { "type": "number" },
+        "calories": { "type": "integer" },
+        "proteinG": { "type": "number" },
+        "carbsG": { "type": "number" },
+        "fatsG": { "type": "number" },
+        "fibreG": { "type": "number" },
+        "timestampMs": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "dateKey", "foodName", "calories", "createdAt", "updatedAt"]
+    },
+    "CloudWaterLog": {
+      "title": "CloudWaterLog",
+      "description": "Daily hydration intake record owned by a user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "dateKey": { "type": "string" },
+        "consumedMl": { "type": "integer" },
+        "goalMl": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "dateKey", "consumedMl", "goalMl", "createdAt", "updatedAt"]
+    },
+    "CloudSleepLog": {
+      "title": "CloudSleepLog",
+      "description": "Sleep & recovery log entry owned by a user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "dateKey": { "type": "string" },
+        "durationHours": { "type": "number" },
+        "bedtimeLabel": { "type": "string" },
+        "wakeTimeLabel": { "type": "string" },
+        "qualityScore": { "type": "integer" },
+        "isRestDay": { "type": "boolean" },
+        "sorenessLevel": { "type": "integer" },
+        "notes": { "type": "string" },
+        "timestampMs": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "dateKey", "durationHours", "qualityScore", "createdAt", "updatedAt"]
+    },
+    "CloudMeasurementLog": {
+      "title": "CloudMeasurementLog",
+      "description": "Body measurements & progress history entry owned by a user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "dateKey": { "type": "string" },
+        "weightKg": { "type": "number" },
+        "heightCm": { "type": "number" },
+        "chestCm": { "type": "number" },
+        "waistCm": { "type": "number" },
+        "hipsCm": { "type": "number" },
+        "armsCm": { "type": "number" },
+        "thighsCm": { "type": "number" },
+        "notes": { "type": "string" },
+        "timestampMs": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "dateKey", "createdAt", "updatedAt"]
+    },
+    "CloudExerciseBookmark": {
+      "title": "CloudExerciseBookmark",
+      "description": "Exercise favorite/offline/completed bookmark owned by a user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "exerciseId": { "type": "string" },
+        "isFavorite": { "type": "boolean" },
+        "isOfflineSaved": { "type": "boolean" },
+        "isCompletedToday": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "exerciseId", "createdAt", "updatedAt"]
+    },
+    "CloudMusicPlaylist": {
+      "title": "CloudMusicPlaylist",
+      "description": "Custom workout music playlist owned by a user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "trackIdsCsv": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "name", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserAccountData" },
+      "description": "Private user account root document storing profile, schedules, diet plan, and app settings."
+    },
+    "/users/{userId}/workouts/{workoutId}": {
+      "schema": { "$ref": "#/entities/CloudWorkoutLog" },
+      "description": "User's completed workout logs."
+    },
+    "/users/{userId}/meals/{mealId}": {
+      "schema": { "$ref": "#/entities/CloudMealLog" },
+      "description": "User's logged meals."
+    },
+    "/users/{userId}/water/{dateKey}": {
+      "schema": { "$ref": "#/entities/CloudWaterLog" },
+      "description": "User's daily water intake logs."
+    },
+    "/users/{userId}/sleep/{sleepId}": {
+      "schema": { "$ref": "#/entities/CloudSleepLog" },
+      "description": "User's sleep and recovery logs."
+    },
+    "/users/{userId}/measurements/{measurementId}": {
+      "schema": { "$ref": "#/entities/CloudMeasurementLog" },
+      "description": "User's body measurement history."
+    },
+    "/users/{userId}/bookmarks/{exerciseId}": {
+      "schema": { "$ref": "#/entities/CloudExerciseBookmark" },
+      "description": "User's favorite and offline-saved exercises."
+    },
+    "/users/{userId}/playlists/{playlistId}": {
+      "schema": { "$ref": "#/entities/CloudMusicPlaylist" },
+      "description": "User's custom workout music playlists."
+    }
+  }
+}

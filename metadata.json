@@ -1,0 +1,6 @@
+{
+  "name": "Fitzenix AI",
+  "description": "AI-powered fitness and workout planner with smart coaching, exercise library, background workout music, nutrition tracking, and progress analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

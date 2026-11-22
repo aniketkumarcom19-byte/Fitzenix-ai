@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="database" path="fitzenix_ai.db" />
+    <include domain="file" path="datastore/" />
+    <include domain="sharedpref" path="." />
+    <exclude domain="sharedpref" path="com.google.firebase.appcheck.debug.store." />
+    <exclude domain="sharedpref" path="com.google.firebase.appcheck.store." />
+</full-backup-content>

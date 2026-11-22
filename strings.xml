@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Fitzenix AI</string>
+    <string name="app_tagline">Rise Stronger Every Day.</string>
+    <string name="ai_live_notice">Powered by Gemini AI — Personalized workouts, live coaching, nutrition &amp; recovery insights.</string>
+    <string name="ai_offline_error">Unable to reach Gemini AI. Check your internet connection and try again.</string>
+    <string name="form_checker_disclaimer">Automated visual posture guides offer general movement cues only and do not guarantee injury prevention.</string>
+    <string name="progress_photos_privacy_note">Progress photos are stored privately on your device and are never shared automatically.</string>
+    <string name="estimated_label">Estimated</string>
+    <string name="notification_channel_workout">Workout &amp; Recovery Reminders</string>
+    <string name="notification_channel_music">Workout Music Playback</string>
+    <string name="auth_google_cta">Continue with Google</string>
+    <string name="auth_guest_cta">Continue as Guest (Local Only)</string>
+    <string name="music_stopped_label">Player stopped — select any track to start a fresh session</string>
+</resources>
